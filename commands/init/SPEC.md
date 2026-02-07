@@ -1,3 +1,6 @@
+---
+description: Set up a new app
+---
 Check if the current folder is empty. If not, output:
     The current folder is not empty.
 
