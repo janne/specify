@@ -1,0 +1,16 @@
+#!/bin/sh
+
+last_message_file="$(mktemp)"
+script_dir="$(dirname "$0")"
+spec_file="$script_dir/../SPEC.md"
+command="$1"
+shift 2>/dev/null || true
+arguments="$*"
+spec_template="$(cat "$spec_file")"
+prompt="$(printf "$spec_template" "$(pwd)" "$command" "$arguments" "$(pwd)" "$command" "$arguments")"
+codex exec --skip-git-repo-check --sandbox workspace-write --output-last-message "$last_message_file" \
+  "$prompt" \
+  >/dev/null 2>&1
+cat "$last_message_file"
+echo
+rm -f "$last_message_file"
