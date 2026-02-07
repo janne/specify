@@ -1,4 +1,4 @@
-The current folder is %s. Command: "%s". Arguments: "%s".
+The working directory is %s. Command: "%s". Arguments: "%s".
 
 If the command is empty, output this description:
 
@@ -11,7 +11,7 @@ If the command is init:
   Check if the current folder is empty. If not, output:
     The current folder is not empty.
   Otherwise, if the folder is empty:
-    Create an empty file called "MANIFEST.md"
+    Copy the contents of skeleton to the working directory.
     And output:
       The project is initiated.
 
