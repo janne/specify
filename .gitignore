@@ -1,0 +1,3 @@
+**/*.lock
+examples/**/README.md
+examples/**/build/**/*
