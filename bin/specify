@@ -1,6 +1,5 @@
 #!/bin/sh
 
-last_message_file="$(mktemp)"
 specify_dir="$(dirname "$0")/../app"
 spec_file="$specify_dir/SPEC.md"
 command="$1"
@@ -8,9 +7,5 @@ shift 2>/dev/null || true
 arguments="$*"
 spec_template="$(cat "$spec_file")"
 prompt="$(printf "$spec_template" "$specify_dir" "$(pwd)" "$command" "$arguments")"
-codex exec --skip-git-repo-check --sandbox workspace-write --output-last-message "$last_message_file" \
-  "$prompt" \
-  >/dev/null 2>&1
-cat "$last_message_file"
+codex exec --skip-git-repo-check --sandbox workspace-write "$prompt"
 echo
-rm -f "$last_message_file"
