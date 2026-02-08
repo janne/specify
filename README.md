@@ -25,6 +25,9 @@ Check that all prerequisites are installed
 ### Specify build
 Build the app
 
+### specify test
+Test the built app against the SPEC.md
+
 ### specify run
 Run it
 
