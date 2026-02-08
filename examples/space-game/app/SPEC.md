@@ -1,0 +1,1 @@
+A simple space game. The initial page shows some space graphics, with stars coming "towards the screen", going diagonally outwards, in different speeds and different shades of white. And a big start button. The start button navigates to app/game/index.html

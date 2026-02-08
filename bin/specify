@@ -1,7 +1,7 @@
 #!/bin/sh
 
 last_message_file="$(mktemp)"
-specify_dir="$(dirname "$0")/.."
+specify_dir="$(dirname "$0")/../app"
 spec_file="$specify_dir/SPEC.md"
 command="$1"
 shift 2>/dev/null || true
